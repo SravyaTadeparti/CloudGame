@@ -13,7 +13,10 @@ public class Window extends Canvas implements Runnable{
     private Thread thread;
     private boolean running = false;
 
-    public Player player = new Player(100, 100, 64, 64);
+    public Player player = new Player(this, 100, 100, 64, 64);
+    public LevelHandler level = new LevelHandler();
+
+    // public int gravity = -10;
     public Window(){
         JFrame frame = new JFrame();
 
