@@ -102,7 +102,8 @@ public class Player {
         this.y = y;
         this.width = width;
         this.height = height;
-        this.playerImage = new ImageIcon("girl.png").getImage();
+        this.playerImage = new ImageIcon(getClass().getResource("girl.png")).getImage();
+
         this.points = points;
     }
 

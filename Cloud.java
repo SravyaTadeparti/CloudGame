@@ -16,8 +16,8 @@ public class Cloud {
         this.y = y;
         this.width = width;
         this.height = height;
-        this.cloudImage = new ImageIcon("cloud.png").getImage();
-        this.cloud2 = new ImageIcon("cloud2.png").getImage();
+        this.cloudImage = new ImageIcon(getClass().getResource("cloud.png")).getImage();
+        this.cloud2 = new ImageIcon(getClass().getResource("cloud2.png")).getImage();
     }
     public void Render(Graphics g){
         g.drawImage(cloudImage, (int)x, (int)y, width, height, null);

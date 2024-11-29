@@ -30,13 +30,14 @@ public class StartPage extends JFrame implements ActionListener {
         panelbottom.setBackground(lightBlue);
         panelmiddle.setBackground(lightBlue);
     
-        ImageIcon icon = new ImageIcon("cloud.png");
-        
+        // ImageIcon icon = new ImageIcon("cloud.png");
+        ImageIcon icon = new ImageIcon(getClass().getResource("cloud.png"));
+
         
 
         // Border border = BorderFactory.createLineBorder(Color.green, 3);
         JLabel label = new JLabel();
-        label.setText("<html>    Want to play?<br>Click the player to start moving<br>Keys:w,a,d, You have 30 seconds!</html>");
+        label.setText("<html>    Want to play?<br>Click the player to start moving<br>Keys: w,a,d,s. You have 30 seconds!</html>");
         label.setFont(new Font("MV Boli", Font.PLAIN, 40));
         // label.setBorder(border);
 
