@@ -14,15 +14,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import java.util.Timer;
+import java.util.TimerTask;
 
 
 
-public class StartPage extends JFrame implements ActionListener {
+
+public class EndPage extends JFrame implements ActionListener {
     Color lightBlue = new Color(173, 216, 230);
+    public int finalpoints;
 
     JButton button;
-    StartPage(){
-        System.out.println("HIIII");
+    EndPage(int points){
         JPanel paneltop = new JPanel();
         JPanel panelmiddle = new JPanel();
         JPanel panelbottom = new JPanel();
@@ -32,11 +34,10 @@ public class StartPage extends JFrame implements ActionListener {
     
         ImageIcon icon = new ImageIcon("cloud.png");
         
-        
 
         // Border border = BorderFactory.createLineBorder(Color.green, 3);
         JLabel label = new JLabel();
-        label.setText("<html>    Want to play?<br>Click the player to start moving<br>Keys:w,a,d, You have 30 seconds!</html>");
+        label.setText("Game is over. \nYou Got " + points + " Points!");
         label.setFont(new Font("MV Boli", Font.PLAIN, 40));
         // label.setBorder(border);
 
@@ -57,11 +58,11 @@ public class StartPage extends JFrame implements ActionListener {
         panelbottom.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
         button.setPreferredSize(new Dimension(150, 50)); 
         button.addActionListener(this);
-        button.setText("PLAY");
+        button.setText("PLAY AGAIN?");
         button.setFocusable(false);
         button.setBackground(Color.blue);
         button.setForeground(Color.white);
-        this.setSize(900, 900);
+        this.setSize(800, 800);
         // this.setLayout(new GridLayout(3, 1, 10, 10));
         this.setLayout(new GridLayout(3, 1));
         this.add(paneltop);
@@ -72,9 +73,14 @@ public class StartPage extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
-        if(e.getSource()==button){
-            Window w = new Window();
-            w.start();
-        }
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run(){
+                if(e.getSource()==button){
+                    new Window().start();
+                }
+            }
+        }, 2000);
     }
 }
+

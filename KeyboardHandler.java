@@ -28,14 +28,13 @@ public class KeyboardHandler implements KeyListener{
             movingleft = true;
         }
         if(key==KeyEvent.VK_W){
-            if(w.player.vely == 0){
-                w.player.vely = -w.player.jumpVelocity;
-            }
+            w.player.vely = -w.player.jumpVelocity;
+            
         }
-        // if(key==KeyEvent.VK_S){
-        //     w.player.vely = w.player.speed;
-        //     movingdown = true;
-        // }
+
+        if(key==KeyEvent.VK_S){
+            w.player.vely = w.player.speed;
+        }
     }
 
     @Override
